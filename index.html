@@ -1,17 +1,35 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>HR system sample UI</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Material+Symbols+Outlined&display=swap">
-<link rel="stylesheet" href="css/style.css">
-<script src="js/app.js"></script>
-</head>
-<body>
-<div class="app">
-<nav class="side" id="side" aria-label="Main menu"></nav>
-<div class="main">
-<div class="top"><span><button class="btn alt" id="pubbtn" onclick="togglePub()">Applicant view</button></span><span id="rolebox"><label for="role">Viewing as</label><select id="role" onchange="setRole(this.value)"></select></span></div>
-<main class="page" id="page"></main>
-</div></div>
-<div class="snack" id="snack" role="status"></div>
-</body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <title>HR system sample UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Material+Symbols+Outlined&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind Play CDN keeps this app build-free. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Load Basecoat after Tailwind so its component styles are preserved. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.0.2/dist/basecoat.cdn.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body class="min-h-screen bg-background text-foreground">
+    <div class="app flex min-h-screen flex-col md:flex-row">
+      <nav class="side flex shrink-0 gap-1 overflow-x-auto border-b p-2 md:w-64 md:flex-col md:overflow-visible md:border-b-0 md:border-r md:p-3" id="side" aria-label="Main menu"></nav>
+      <div class="main min-w-0 flex-1">
+        <header class="top flex h-16 items-center justify-between gap-3 px-4 md:px-6">
+          <button class="btn" data-variant="secondary" id="pubbtn" onclick="togglePub()">Applicant view</button>
+          <div id="rolebox" class="flex items-center gap-2">
+            <label for="role" class="text-sm text-muted-foreground">Viewing as</label>
+            <select id="role" class="select w-auto" onchange="setRole(this.value)"></select>
+          </div>
+        </header>
+        <main class="page mx-auto w-full max-w-5xl px-4 pb-10 md:px-6" id="page"></main>
+      </div>
+    </div>
+    <div class="snack" id="snack" role="status" aria-live="polite"></div>
+  </body>
+</html>

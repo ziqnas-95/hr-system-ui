@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HR system sample UI</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Material+Symbols+Outlined&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/app.js"></script>
+</head>
+<body>
+<div class="app">
+<nav class="side" id="side" aria-label="Main menu"></nav>
+<div class="main">
+<div class="top"><span><button class="btn alt" id="pubbtn" onclick="togglePub()">Applicant view</button></span><span id="rolebox"><label for="role">Viewing as</label><select id="role" onchange="setRole(this.value)"></select></span></div>
+<main class="page" id="page"></main>
+</div></div>
+<div class="snack" id="snack" role="status"></div>
+</body></html>
